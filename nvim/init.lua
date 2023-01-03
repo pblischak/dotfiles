@@ -13,10 +13,12 @@ require('ayu').setup({
     },
 })
 
+require('ayu').colorscheme('ayu-mirage')
 require('lualine').setup({
     options = {
       theme = 'ayu',
     },
 })
 
-require('ayu').colorscheme('ayu-mirage')
+vim.wo.cursorline = true
+vim.api.nvim_set_hl(0, 'ColorColumn', {ctermbg=0, bg='#695380'})

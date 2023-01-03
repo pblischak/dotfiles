@@ -6,7 +6,10 @@ return require('packer').startup(function(use)
 
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+	  requires = {
+          {'nvim-lua/plenary.nvim'},
+          {'IllustratedMan-code/telescope-conda.nvim'},
+      }
   }
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -37,6 +40,45 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
 	  }
+  }
+  use {
+    "danymat/neogen",
+    config = function()
+        require('neogen').setup {
+            enabled = true,
+            languages = {
+                python = {
+                    template = {
+                        annotation_convention = "numpydoc"
+                    }
+                }
+            }
+        }
+    end,
+    requires = "nvim-treesitter/nvim-treesitter",
+    -- Uncomment next line if you want to follow only stable versions
+    -- tag = "*"
+  }
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+  use {
+      'windwp/nvim-autopairs',
+      config = function()
+          require('nvim-autopairs').setup()
+      end
+  }
+  use("airblade/vim-gitgutter")
+  -- Lua
+  use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+          require("trouble").setup()
+      end
   }
 
   use("folke/zen-mode.nvim")
