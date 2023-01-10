@@ -1,8 +1,15 @@
 -- vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+        require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
 
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -12,6 +19,7 @@ return require('packer').startup(function(use)
       }
   }
 
+<<<<<<< Updated upstream
   use {
       "jose-elias-alvarez/null-ls.nvim",
       config = function()
@@ -20,6 +28,18 @@ return require('packer').startup(function(use)
       requires = { "nvim-lua/plenary.nvim" },
   }
 
+||||||| Stash base
+=======
+  use {
+      'saecki/crates.nvim',
+      tag = 'v0.3.0',
+      requires = { 'nvim-lua/plenary.nvim' },
+      config = function()
+          require('crates').setup()
+      end,
+  }
+
+>>>>>>> Stashed changes
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
