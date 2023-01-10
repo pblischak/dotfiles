@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
       }
   }
 
-<<<<<<< Updated upstream
   use {
       "jose-elias-alvarez/null-ls.nvim",
       config = function()
@@ -28,8 +27,6 @@ return require('packer').startup(function(use)
       requires = { "nvim-lua/plenary.nvim" },
   }
 
-||||||| Stash base
-=======
   use {
       'saecki/crates.nvim',
       tag = 'v0.3.0',
@@ -39,7 +36,6 @@ return require('packer').startup(function(use)
       end,
   }
 
->>>>>>> Stashed changes
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
