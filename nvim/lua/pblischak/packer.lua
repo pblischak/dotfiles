@@ -3,14 +3,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use({
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-        require("null-ls").setup()
-    end,
-    requires = { "nvim-lua/plenary.nvim" },
-  })
-
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	  requires = {
