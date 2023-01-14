@@ -11,13 +11,6 @@ return require('packer').startup(function(use)
       }
   }
 
-  use {
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-          require("null-ls").setup()
-      end,
-      requires = { "nvim-lua/plenary.nvim" },
-  }
 
   use {
       'saecki/crates.nvim',
@@ -75,20 +68,33 @@ return require('packer').startup(function(use)
     -- Uncomment next line if you want to follow only stable versions
     -- tag = "*"
   }
+
+  use {
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+          require("null-ls").setup()
+      end,
+      requires = { "nvim-lua/plenary.nvim" },
+  }
+
+  use("jayp0521/mason-null-ls.nvim")
+
   use {
       'numToStr/Comment.nvim',
       config = function()
           require('Comment').setup()
       end
   }
+
   use {
       'windwp/nvim-autopairs',
       config = function()
           require('nvim-autopairs').setup()
       end
   }
+
   use("airblade/vim-gitgutter")
-  -- Lua
+
   use {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
@@ -98,6 +104,7 @@ return require('packer').startup(function(use)
   }
 
   use("folke/zen-mode.nvim")
+
   use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
