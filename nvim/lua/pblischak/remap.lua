@@ -9,6 +9,7 @@ vim.keymap.set("n", "<leader>bn", "<cmd>bnext<cr>")
 -- Telescope kaymaps
 vim.keymap.set("n", "<leader>tb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>th", "<cmd>Telescope help_tags<cr>")
+vim.keymap.set("n", "<leader>td", "<cmd>Telescope diagnostics<cr>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
