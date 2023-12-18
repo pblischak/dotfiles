@@ -2,3 +2,4 @@ old/
 .DS_Store
 .*~
 helix
+nvim/lazy-lock.json
