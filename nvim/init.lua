@@ -273,6 +273,7 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+vim.opt.undodir = os.getenv("HOME") .. ".vim/undodir"
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
@@ -290,6 +291,15 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- My opt settings
+vim.opt.smartindent = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+
+vim.opt.scrolloff = 8
+
+vim.opt.colorcolumn = "100"
 
 -- [[ Basic Keymaps ]]
 
