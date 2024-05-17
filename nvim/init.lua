@@ -260,6 +260,11 @@ require('lazy').setup({
       "tpope/vim-fugitive",
     },
   },
+  -- {
+  --   'mrcjkb/rustaceanvim',
+  --   version = '^4', -- Recommended
+  --   ft = { 'rust' },
+  -- },
   {
     'saecki/crates.nvim',
     tag = 'stable',
@@ -333,6 +338,7 @@ vim.opt.backup = false
 vim.opt.scrolloff = 8
 
 vim.opt.colorcolumn = "100"
+vim.opt.tabstop = 4
 
 -- [[ Basic Keymaps ]]
 
@@ -462,6 +468,10 @@ vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'zig' },
+    modules = {},
+
+    sync_install = true,
+    ignore_install = {},
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -597,9 +607,10 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
+  clangd = {},
+  gopls = {},
   -- pyright = {},
+  zls = {},
   rust_analyzer = {
     ["rust_analyzer"] = {
       checkOnSave = {
