@@ -52,6 +52,8 @@ vim.g.netrw_winsize = 50
 -- Line numbering
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
