@@ -248,7 +248,7 @@ serialize_pane_viewport true
 //
 scrollback_lines_to_serialize 2000
 
-// Define color themes for Zellij
+// Define color
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
@@ -282,12 +282,38 @@ themes {
         white 233 225 254
         orange 216 133 76
     }
+    ayu_light {
+        fg "#5C6166"
+        bg "#FAFAFA"
+        black "#E7EAED"
+        red "#F07171"
+        green "#86B300"
+        yellow "#FFAA33"
+        blue "#399EE6"
+        magenta "#A37ACC"
+        cyan "#478ACC"
+        white "#FCFCFC"
+        orange "#FA8D3E"
+    }
+    ayu_mirage {
+        fg "#CCCAC2"
+        bg "#1F2430"
+        black "#1A1F29"
+        red "#F28779"
+        green "#D5FF80"
+        yellow "#FFCC77"
+        blue "#73D0FF"
+        magenta "#DFBFFF"
+        cyan "#444B55"
+        white "#C7C7C7"
+        orange "#FFAD66"
+    }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "one-half-dark"
+theme "ayu_mirage"
 
 // The name of the default layout to load on startup
 // Default: "default"
