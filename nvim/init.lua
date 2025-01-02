@@ -14,7 +14,7 @@ Kickstart.nvim is a template for your own configuration.
   explore Neovim!
 
   If you don't know anything about Lua, I recommend taking some time to read through
-  a guide. One possible example:
+  a guide. One possexample:
   - https://learnxinyminutes.com/docs/lua/
 
 
@@ -54,6 +54,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.cursorline = true
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
@@ -174,10 +175,18 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- 'navarasu/onedark.nvim',
+    'Shatur/neovim-ayu',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      require('ayu').setup({
+        mirage = true,   -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+        terminal = true, -- Set to `false` to let terminal manage its own colors.
+        overrides = {},  -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
+      })
+
+      require('ayu').colorscheme()
+      vim.cmd.colorscheme 'ayu'
     end,
   },
 
@@ -188,7 +197,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'ayu',
         component_separators = '|',
         section_separators = '',
       },
@@ -202,6 +211,9 @@ require('lazy').setup({
     -- See `:help ibl`
     main = 'ibl',
     opts = {},
+    config = function()
+      require('ibl').setup()
+    end
   },
 
   -- "gc" to comment visual regions/lines
@@ -273,6 +285,12 @@ require('lazy').setup({
     config = function()
       require('crates').setup()
     end,
+  },
+  {
+    "danymat/neogen",
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -366,6 +384,9 @@ vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document
 vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
 vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
 vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+
+-- neogen.nvim keymaps
+vim.keymap.set("n", "<leader>ng", function() require("neogen").generate() end)
 
 -- My key bindings
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
