@@ -6,4 +6,4 @@ theme = Ayu Mirage
 window-width = 1024
 window-height = 1024
 macos-titlebar-style = native
-macos-window-shadow = false
+background-opacity = 0.995
