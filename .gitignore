@@ -3,3 +3,4 @@ old/
 .*~
 helix
 nvim/lazy-lock.json
+*.bak
