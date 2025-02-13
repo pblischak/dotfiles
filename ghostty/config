@@ -5,5 +5,4 @@ cursor-style = block
 theme = tokyonight-storm
 window-width = 1024
 window-height = 1024
-macos-titlebar-style = native
 background-opacity = 0.995
